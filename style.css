@@ -1,0 +1,80 @@
+:root {
+  --bg-color: white;
+  --text-color: black;
+  --header-footer-bg: #4CAF50;
+  --sidebar-bg: #f0f0f0;
+  --link-color: blue;
+}
+
+[data-theme='dark'] {
+  --bg-color: #222;
+  --text-color: #eee;
+  --header-footer-bg: #111;
+  --sidebar-bg: #333;
+  --link-color: violet;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.dashboard {
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "sidebar main"
+    "footer footer";
+  grid-template-columns: 200px 1fr;
+  grid-template-rows: auto 1fr auto;
+  height: 100vh;
+}
+
+.header {
+  grid-area: header;
+  background-color: var(--header-footer-bg);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+.theme-switch {
+  font-size: 0.9rem;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  background-color: var(--sidebar-bg);
+  padding: 1rem;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin: 0.5rem 0;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: var(--link-color);
+}
+
+.main {
+  grid-area: main;
+  padding: 2rem;
+}
+
+.footer {
+  grid-area: footer;
+  background-color: var(--header-footer-bg);
+  color: white;
+  text-align: center;
+  padding: 0.5rem;
+}
